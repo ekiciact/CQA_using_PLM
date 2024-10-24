@@ -48,7 +48,7 @@ These configurations can be selected using the `--run_option` argument when trai
 
 ## Usage
 
-- ### Prerequisites
+### Prerequisites
 
 - Python 3.8+
 - PyTorch
