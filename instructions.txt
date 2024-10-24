@@ -1,0 +1,34 @@
+All CQA files should be copied with their consisting folder not just the CQA-DBP.pkl file
+    (there will be 5 folder containing pkl files as CQA_run1, ..., CQA_run5
+There is just one cqa.pkl file and its path is the same as other cta.pkl, cta.pkl files
+run_option will be changed depending on each configurations;
+    'CQA_run1' :Exclude all (40) tables with nonzero values in sub, obj, qualifier columns
+                Include one example categories in only training
+    'CQA_run2' :Exclude all (40) tables with nonzero values in sub, obj, qualifier columns
+                Exclude one example categories in the training and validation
+    'CQA_run3' :Include all (40) tables with nonzero values in sub, obj, qualifier columns
+                by switching the subject column with the 1st column (subject column - 0)
+                Include one example categories in the training
+    CQA_'run4' :Include all (40) tables with nonzero values in sub, obj, qualifier columns
+                by switching the subject column with the 1st column (subject column - 0)
+                Exclude one example categories in the training and validation
+    'CQA_run5' :Include all (40) tables with nonzero values in sub, obj, qualifier columns
+                by switching the subject column with the 1st column (subject column - 0)
+                Split the tables randomly and equally to two tables in the one example categories
+                Include one example categories as two example after split in the training and validation
+    run_option = 'CQA_run1'
+--run_mode parameter will be change based on desired task, epoch configuration;
+    Choose 'sequential' to run each task for the full number of epochs before moving to the next task.
+    Choose 'round_robin' to run each task one epoch at a time in a round-robin fashion.
+
+
+New updated code includes;
+    sequential and round_robin run mode
+    5 different CQA configuration
+    saving and logging classification_report for each task, for each epoch for tr and vl (evaluation metric based on each category)
+    saving predictions_and_labels each task, for each epoch for tr and vl
+    printing analyze_errors (confusion matrix; one categories is always predicted as some other specific category
+    all save files names include run mode, task names and run_option for CQA
+    wandb run name include run mode, task names and run_option for CQA
+    tables_to_exclude list is no more in use because it has no effect thus the tr and vl sets is formed as CQA-DBP.pkl and 1 example categories are already just in tr sets
+
