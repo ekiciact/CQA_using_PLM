@@ -2,7 +2,6 @@
 
 This repository contains the code and resources for the research project titled **"Column Qualifier Annotation Using Pretrained Language Model"**. The project focuses on automating the annotation of table columns, particularly handling n-ary relationships using a BERT-based model. The work builds on Column Type Annotation (CTA), Column Property Annotation (CPA), and Column Qualifier Annotation (CQA) tasks to improve table understanding and annotation through Pretrained Language Models (PLMs).
 
-<img width="1936" height="820" alt="image" src="https://github.com/user-attachments/assets/19212d6b-8d3a-4c21-aa72-a2bc79f142e6" />
 
 
 ## Project Overview
